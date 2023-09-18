@@ -1,0 +1,10 @@
+echo TF2.3.0开始时间:
+date +%Y_%m_%d_%k:%M:%S
+
+python main/TF2.3.0/MetaTestLeakyRelu.py --device cpu --format NHWC --delta $DELTA # tf不支持CPU NHWC配置
+python main/TF2.3.0/MetaTestLeakyRelu.py --device cpu --format NCHW --delta $DELTA # tf不支持CPU+NCHW配置
+python main/TF2.3.0/MetaTestLeakyRelu.py --device gpu --format NHWC --delta $DELTA
+python main/TF2.3.0/MetaTestLeakyRelu.py --device gpu --format NCHW --delta $DELTA
+
+echo TF2.3.0结束时间:
+date +%Y_%m_%d_%k:%M:%S
